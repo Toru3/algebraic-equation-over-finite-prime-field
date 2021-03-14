@@ -5,6 +5,7 @@ image: "rust:latest"
 
 .run_test: &run_test
   script:
+    - rustup component add rustfmt clippy
     - rustup --version && rustc --version && cargo --version
     - cargo fmt --all -- --check
     - cargo clippy --workspace --all-targets --all-features --verbose -- -D warnings
@@ -14,10 +15,9 @@ image: "rust:latest"
 test:stable:
   <<: *run_test
   before_script:
-    - rustup toolchain install stable --component rustfmt clippy
+    - rustup default stable
 
 test:beta:
   <<: *run_test
   before_script:
     - rustup default beta
-    - rustup toolchain install beta --component rustfmt clippy
