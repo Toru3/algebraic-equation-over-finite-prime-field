@@ -3,8 +3,13 @@ name = "algebraic-equation-over-finite-prime-field"
 version = "0.1.0"
 authors = ["Toru3 <ryuutet@gmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "solve algebraic equation over finite prime field"
+license = "MIT OR Apache-2.0"
+documentation = "https://docs.rs/algebraic-equation-over-finite-prime-field"
+repository = "https://gitlab.com/Toru3/algebraic-equation-over-finite-prime-field"
+readme = "README.md"
+keywords = ["algebra", "prime", "modulo"]
+categories = ["algorithms", "mathematics"]
 
 [dependencies]
 modulo-n-tools = "0.1.1"
