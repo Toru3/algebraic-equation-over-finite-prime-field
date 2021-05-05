@@ -7,5 +7,19 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+modulo-n-tools = "0.1.1"
 num-traits = "0.2.14"
+polynomial-over-finite-prime-field = "0.2.0"
 rand = "0.8.3"
+ring-algorithm = "0.3.0"
+[dev-dependencies]
+primal = "0.3.0"
+rayon = "1.5.0"
+[features]
+default = []
+__internal_inject_debug = [] # DO NOT USE
+[package.metadata.docs.rs]
+rustdoc-args = [
+    "--html-in-header",
+    "katex.html",
+]
