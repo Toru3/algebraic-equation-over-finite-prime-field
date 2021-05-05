@@ -368,26 +368,26 @@ fn quadratic_test() {
     use rand::prelude::*;
     let mut rng = rand::thread_rng();
     for _ in 0..100_000 {
-        let p = (rng.gen::<i32>() as i64).abs();
-        if p == 2 || !primal::is_prime(p as u64) {
+        let prime = (rng.gen::<i32>() as i64).abs();
+        if prime == 2 || !primal::is_prime(prime as u64) {
             continue;
         }
-        let between1 = Uniform::from(1..p);
-        let between2 = Uniform::from(0..p);
+        let between1 = Uniform::from(1..prime);
+        let between2 = Uniform::from(0..prime);
         for _ in 0..100 {
             let a = between1.sample(&mut rng);
             let b = between2.sample(&mut rng);
             let c = between2.sample(&mut rng);
-            let d = b * b + p - (4 * a % p * c % p);
-            dbg!((d, p));
-            if jacobi_symbol::<i64>(d, p) == 1 {
-                dbg!((a, b, c, p));
-                let (x, y) = solve_quadratic_equation::<i64>(a, b, c, p);
-                dbg!((x, y));
-                assert!(0 <= x && x < p);
-                assert!(0 <= y && y < p);
-                assert_eq!(((a * x + b) % p * x + c) % p, 0);
-                assert_eq!(((a * y + b) % p * y + c) % p, 0);
+            let d = b * b + prime - (4 * a % prime * c % prime);
+            dbg!((d, prime));
+            if jacobi_symbol::<i64>(d, prime) == 1 {
+                dbg!((a, b, c, prime));
+                let (x1, x2) = solve_quadratic_equation::<i64>(a, b, c, prime);
+                dbg!((x1, x2));
+                assert!(0 <= x1 && x1 < prime);
+                assert!(0 <= x2 && x2 < prime);
+                assert_eq!(((a * x1 + b) % prime * x1 + c) % prime, 0);
+                assert_eq!(((a * x2 + b) % prime * x2 + c) % prime, 0);
             }
         }
     }
@@ -557,7 +557,7 @@ where
 fn find_all_roots_over_mod_p_test_small() {
     let p = PolynomialOverP::<i32>::new(vec![-1, 0, 0, 0, 1], 5);
     let mut v = find_all_roots_over_mod_p::<i32>(p);
-    v.sort();
+    v.sort_unstable();
     assert_eq!(vec![1, 2, 3, 4], v);
 }
 
