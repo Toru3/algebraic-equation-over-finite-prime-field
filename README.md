@@ -8,3 +8,6 @@ let mut v = find_all_roots_over_mod_p::<i32>(p);
 v.sort();
 assert_eq!(vec![1, 3], v);
 ```
+
+# Licence
+AGPL-3.0-or-later

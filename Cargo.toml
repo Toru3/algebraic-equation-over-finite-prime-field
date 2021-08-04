@@ -1,10 +1,10 @@
 [package]
 name = "algebraic-equation-over-finite-prime-field"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Toru3 <ryuutet@gmail.com>"]
 edition = "2018"
 description = "solve algebraic equation over finite prime field"
-license = "MIT OR Apache-2.0"
+license = "AGPL-3.0-or-later"
 documentation = "https://docs.rs/algebraic-equation-over-finite-prime-field"
 repository = "https://gitlab.com/Toru3/algebraic-equation-over-finite-prime-field"
 readme = "README.md"
