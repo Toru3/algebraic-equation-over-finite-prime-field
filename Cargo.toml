@@ -1,6 +1,6 @@
 [package]
 name = "algebraic-equation-over-finite-prime-field"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Toru3 <ryuutet@gmail.com>"]
 edition = "2018"
 description = "solve algebraic equation over finite prime field"
@@ -12,14 +12,14 @@ keywords = ["algebra", "prime", "modulo"]
 categories = ["algorithms", "mathematics"]
 
 [dependencies]
-modulo-n-tools = "0.1.1"
+modulo-n-tools = "0.2.0"
 num-traits = "0.2.14"
-polynomial-over-finite-prime-field = "0.2.0"
-rand = "0.8.3"
-ring-algorithm = "0.3.0"
+polynomial-over-finite-prime-field = "0.3.1"
+rand = "0.8.4"
+ring-algorithm = "0.4.0"
 [dev-dependencies]
 primal = "0.3.0"
-rayon = "1.5.0"
+rayon = "1.5.1"
 [features]
 default = []
 __internal_inject_debug = [] # DO NOT USE
